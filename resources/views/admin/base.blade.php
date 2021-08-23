@@ -15,7 +15,7 @@
         </div>
     </nav>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary sticky-top">
         <div class="container">
             <ul class="navbar-nav">
                 <li class="nav-item"><a href="" class="nav-link">Home</a></li>
@@ -32,5 +32,19 @@
 
     @section('content')
         @show
+
+        <div class="modal fade" id ="insert">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <form method="POST" action="{{route(admin.category.insert)}}" class="d-flex">
+                            @csrf
+                                <input type="text" name="title" id="" class="form-control">
+                                <input type="submit" class="btn btn-success">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 </html>
